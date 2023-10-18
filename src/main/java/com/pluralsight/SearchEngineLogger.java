@@ -20,7 +20,7 @@ public class SearchEngineLogger {
             int temp = 0;
             while(temp < 1){
                 System.out.print("User Input (X to exit): ");
-                String loggerInput = choiceScan.nextLine();
+                String loggerInput = (choiceScan.nextLine().trim());
                 if(loggerInput.equalsIgnoreCase("x")){
                     logger.write(LocalDateTime.now().format(df) + " exit");
                     temp++;
@@ -48,6 +48,7 @@ public class SearchEngineLogger {
                 break;
             case("2"):
                 System.out.println("See you again soon!");
+                choiceScan.close();
                 break;
             default:
                 System.out.println("Please enter a valid option (1 or 2).\n");
